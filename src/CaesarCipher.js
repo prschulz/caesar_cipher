@@ -7,7 +7,6 @@ var cipher = {
     messageArr.forEach(function(c){
       encryptedMessage.push(nextChar(c, key)); //push each letter into array after calling nextChar
     });
-
     return encryptedMessage.join('');  //join and return encrypted message
   },
 
@@ -19,16 +18,17 @@ var cipher = {
     messageArr.forEach(function(c){
       decryptedMessage.push(lastChar(c, key));  //push each letter into array after calling lastChar
     });
-
     return decryptedMessage.join('');  //join and return decrypted message
   },
-
 };
 
 function nextChar(c, key) {
+    key = key > 26 ? key % 26 : key;  //proof against charCode being too large
     return String.fromCharCode(c.charCodeAt(0) + key); //add key to character
 }
 
 function lastChar(c, key) {
+  key = key > 26 ? key % 26 : key; //proof against charCode being too large
   return String.fromCharCode(c.charCodeAt(0)- key); //subtract key from character
 }
+

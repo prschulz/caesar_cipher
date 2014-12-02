@@ -9,11 +9,11 @@ describe("cipher", function(){
       expect(cipher.encrypt(message, key)).toBe(encryptedMessage);
     });
     it("allows keys larger than 25", function(){
-      cipher.key = 27;
+      cipher.key = 43;
       expect(cipher.encrypt(message, key)).toBe(encryptedMessage);
     });
     it("removes all spaces from the message", function() {
-      var message = "attack at dawn"
+      var message = "attack at dawn";
       expect(cipher.encrypt(message, key)).toBe(encryptedMessage);
     });
     it("is case-insensitive", function() {
@@ -27,6 +27,6 @@ describe("cipher", function(){
       expect(cipher.decrypt(encryptedMessage, key)).toEqual(message);
     });
   });
-  
+
 });
 
