@@ -1,7 +1,7 @@
 var cipher = {
   encrypt: function (message, key) {
     message = message.split(' ').join('').toLowerCase(); //remove spaces and make lowercase
-    messageArr = message.split(''); //make array
+    messageArr = message.split('');  // make array
     var encryptedMessage = [];  //empty array for encrypted message
 
     messageArr.forEach(function(c){
@@ -13,11 +13,11 @@ var cipher = {
 
   decrypt: function (message, key) {
     message = message.split(' ').join('').toLowerCase(); //remove spaces and make lowercase
-    messageArr = message.split(''); //make array
-    var decryptedMessage = []; //empty array for decrypted message
+    messageArr = message.split('');  //make array
+    var decryptedMessage = [];  //empty array for decrypted message
 
     messageArr.forEach(function(c){
-      decryptedMessage.push(lastChar(c, key)); //push each letter into array after calling lastChar
+      decryptedMessage.push(lastChar(c, key));  //push each letter into array after calling lastChar
     });
 
     return decryptedMessage.join('');  //join and return decrypted message
@@ -26,9 +26,9 @@ var cipher = {
 };
 
 function nextChar(c, key) {
-    return String.fromCharCode(c.charCodeAt(0) + key);
+    return String.fromCharCode(c.charCodeAt(0) + key); //add key to character
 }
 
 function lastChar(c, key) {
-  return String.fromCharCode(c.charCodeAt(0)-key);
+  return String.fromCharCode(c.charCodeAt(0)- key); //subtract key from character
 }
