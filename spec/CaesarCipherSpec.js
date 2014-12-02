@@ -1,7 +1,7 @@
 describe("cipher", function(){
-  var key = 1;
   var message = "attackatdawn";
   var encryptedMessage = "buubdlbuebxo";
+  var key = 1;
 
   // describe the behavior of a CaesarCipher object
   describe("#encrypt", function(){
