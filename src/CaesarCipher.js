@@ -23,8 +23,8 @@ var cipher = {
 };
 
 function nextChar(c, key) {
-    key = key > 26 ? key % 26 : key;  //proof against charCode being too large
-    return String.fromCharCode(c.charCodeAt(0) + key); //add key to character
+  key = key > 26 ? key % 26 : key;  //proof against charCode being too large
+  return String.fromCharCode(c.charCodeAt(0) + key); //add key to character
 }
 
 function lastChar(c, key) {
